@@ -29,3 +29,6 @@ apt-get install python-glade2 python-gt
 
 # Editor: vim
 apt-get install vim-gnome
+
+# Screensaver
+apt-get install xscreensaver-data-extra
