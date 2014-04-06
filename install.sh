@@ -22,13 +22,13 @@ sudo apt-get install awesome
 sudo apt-get install rxvt-unicode
 
 # Font: terminus
-apt-get install xfonts-terminus
+sudo apt-get install xfonts-terminus
 
 # Icons: ACYL #55af66 (Dependencies)
-apt-get install python-glade2 python-gt
+sudo apt-get install python-glade2 python-gt
 
 # Editor: vim
-apt-get install vim-gnome
+sudo apt-get install vim-gnome
 
 # Screensaver
-apt-get install xscreensaver-data-extra
+sudo apt-get install xscreensaver-data-extra
