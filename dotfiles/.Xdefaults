@@ -1,0 +1,49 @@
+! General
+!! Make it work when remote. Noone knows urxvt or rxvt-256colors or the like
+urxvt*termName:          xterm
+urxvt*loginShell:         true
+urxvt*scrollBar:         false
+urxvt*secondaryScroll:    true
+urxvt*saveLines:         65535
+urxvt*cursorBlink:       false
+urxvt*urgentOnBell:       true
+ 
+! Extensions
+urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*perl-ext-common: default,matcher,searchable-scrollback
+urxvt*urlLauncher:     /usr/bin/firefox
+urxvt*matcher.button:  1
+!  - catch ugly URLs
+urxvt.cutchars:        `()'*<>[]{|}"
+
+urxvt*font:     -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+
+urxvt*transparent: false
+urxvt*foreground: #55AF66
+urxvt*background: #000000
+
+! Black
+URxvt.color0:           #303030
+URxvt.color8:           #404040
+! Red
+URxvt.color1:           #E84F4F
+URxvt.color9:           #D23D3D
+! Green
+URxvt.color2:           #B8D68C
+URxvt.color10:          #A0CF5D
+! Yellow
+URxvt.color3:           #E1AA5D
+URxvt.color11:          #F39D21
+! Blue
+URxvt.color4:           #7DC1CF
+URxvt.color12:          #4E9FB1
+! Magenta
+URxvt.color5:           #9B64FB
+URxvt.color13:          #8542FF
+! Cyan
+URxvt.color6:           #6D878D
+URxvt.color14:          #42717B
+! White
+URxvt.color7:           #dddddd
+URxvt.color15:          #dddddd
+
