@@ -47,6 +47,8 @@ beautiful.init(awful.util.getdir("config") .. "/themes/trinity/theme.lua")
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
+browser = "chromium-browser"
+gui_editor = editor_cmd
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -82,6 +84,25 @@ elseif beautiful.wallpaper_cmd then
     awful.util.spawn_with_shell(beautiful.wallpaper_cmd)
 end
 -- }}}
+
+-- {{{ Autostart
+
+-- Do not spawn multiple times on awesome restart
+function run_once(cmd)
+    findme = cmd
+    firstspace = cmd:find(" ")
+
+    if firstspace then
+       findme = cmd:sub(0, firstspace-1)
+    end
+
+    awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
+
+-- run_once("urxvtd") -- Not significantly faster and crashes often
+run_once("xscreensaver -nosplash")
+-- }}}
+
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
@@ -277,7 +298,23 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+    
+    -- Thinkpad audio controls
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 9%+", false) end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 9%-", false) end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end),
+
+    -- Thinkpad brightness controls
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 15") end),
+
+    -- Screensaver
+    awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- Applications
+    awful.key({ modkey }, "q", function () awful.util.spawn(browser) end),
+    awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end)
 )
 
 clientkeys = awful.util.table.join(
