@@ -47,7 +47,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/trinity/theme.lua")
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-browser = "chromium-browser"
+browser = "dwb"
 gui_editor = editor_cmd
 
 -- Default modkey.
@@ -137,7 +137,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock(" %a %Y-%m-%d %H:%M:%S (%s)", 0.5)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
