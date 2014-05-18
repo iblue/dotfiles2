@@ -5,7 +5,7 @@ awful.util = require("awful.util")
 
 theme = {}
 
-theme.font          = "terminus 9"
+theme.font          = "terminus 11"
 
 theme.wallpaper_cmd = "xsetroot -solid '#000000'"
 

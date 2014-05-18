@@ -16,7 +16,7 @@ urxvt*matcher.button:  1
 !  - catch ugly URLs
 urxvt.cutchars:        `()'*<>[]{|}"
 
-urxvt*font:     -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+urxvt*font:     -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 
 urxvt*transparent: false
 urxvt*foreground: #55AF66
